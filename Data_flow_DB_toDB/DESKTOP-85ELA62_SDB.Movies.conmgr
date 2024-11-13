@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0"?>
 <DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
-  DTS:ObjectName="DESKTOP-85ELA62_SDB.Movies"
+  DTS:ObjectName="###"
   DTS:DTSID="{4BD11CA7-87FD-4AD4-92D8-0CA4E3AED427}"
   DTS:CreationName="OLEDB">
   <DTS:ObjectData>
     <DTS:ConnectionManager
       DTS:ConnectRetryCount="1"
       DTS:ConnectRetryInterval="5"
-      DTS:ConnectionString="Data Source=DESKTOP-85ELA62\SDB;Initial Catalog=Movies;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Data_flow_DB_toDB-{4BD11CA7-87FD-4AD4-92D8-0CA4E3AED427}DESKTOP-85ELA62\SDB.Movies;Auto Translate=False;" />
+      DTS:ConnectionString="Data Source=###;Initial Catalog=DB;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Data_flow_DB_toDB-{4BD11CA7-87FD-4AD4-92D8-0CA4E3AED427}DESKTOP-85ELA62\SDB.Movies;Auto Translate=False;" />
   </DTS:ObjectData>
 </DTS:ConnectionManager>
