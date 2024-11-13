@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0"?>
 <DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
-  DTS:ObjectName="DESKTOP-85ELA62.125007"
+  DTS:ObjectName="###"
   DTS:DTSID="{51F3E479-D5D6-4AAC-990C-78DB8E1DA35B}"
   DTS:CreationName="OLEDB">
   <DTS:ObjectData>
     <DTS:ConnectionManager
       DTS:ConnectRetryCount="1"
       DTS:ConnectRetryInterval="5"
-      DTS:ConnectionString="Data Source=DESKTOP-85ELA62;Initial Catalog=125007;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Data_flow_DB_toDB-{51F3E479-D5D6-4AAC-990C-78DB8E1DA35B}DESKTOP-85ELA62.125007;Auto Translate=False;" />
+      DTS:ConnectionString="Data Source=###;Initial Catalog=DB;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Data_flow_DB_toDB-{51F3E479-D5D6-4AAC-990C-78DB8E1DA35B}DESKTOP-85ELA62.125007;Auto Translate=False;" />
   </DTS:ObjectData>
 </DTS:ConnectionManager>
