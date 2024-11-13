@@ -3,8 +3,8 @@
   DTS:refId="Package"
   DTS:CreationDate="11/11/2024 7:50:59 PM"
   DTS:CreationName="Microsoft.Package"
-  DTS:CreatorComputerName="DESKTOP-85ELA62"
-  DTS:CreatorName="DESKTOP-85ELA62\Rowson"
+  DTS:CreatorComputerName="##"
+  DTS:CreatorName="##"
   DTS:DTSID="{2147E7A7-BB8B-4143-8D89-8507306115B2}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="16.0.845.0"
@@ -17,7 +17,7 @@
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[DESKTOP-85ELA62.BankingDB]"
+      DTS:refId="Package.ConnectionManagers[##]"
       DTS:CreationName="OLEDB"
       DTS:DTSID="{3342D10B-F360-42CD-99B1-FB125C636783}"
       DTS:ObjectName="DESKTOP-85ELA62.BankingDB">
@@ -25,7 +25,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=DESKTOP-85ELA62;Initial Catalog=BankingDB;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{3342D10B-F360-42CD-99B1-FB125C636783}DESKTOP-85ELA62.BankingDB;Auto Translate=False;" />
+          DTS:ConnectionString="Data Source=---;Initial Catalog=DB;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Package1-{3342D10B-F360-42CD-99B1-FB125C636783}DESKTOP-85ELA62.BankingDB;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -43,7 +43,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="D:\ETL_Learning\FOR_Loop_Container\Example_1\xls\customer1.CSV">
+          DTS:ConnectionString="------------\xls\customer1.CSV">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -117,7 +117,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="path">
       <DTS:VariableValue
-        DTS:DataType="8">D:\ETL_Learning\FOR_Loop_Container\Example_1\xls</DTS:VariableValue>
+        DTS:DataType="8">-------------------Example_1\xls</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:Executables>
