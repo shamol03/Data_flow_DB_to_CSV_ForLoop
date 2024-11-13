@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32929.386
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "Data_flow_DB_toDB", "Data_flow_DB_toDB\Data_flow_DB_toDB.dtproj", "{C22952BF-91D2-484F-8417-B7C8A01B5883}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C22952BF-91D2-484F-8417-B7C8A01B5883}.Development|Default.ActiveCfg = Development
+		{C22952BF-91D2-484F-8417-B7C8A01B5883}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {491060B2-80AA-4F7A-ABA4-DFF3F114032D}
+	EndGlobalSection
+EndGlobal

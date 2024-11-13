@@ -1,0 +1,2735 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/6/2024 9:10:35 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-85ELA62"
+  DTS:CreatorName="DESKTOP-85ELA62\Rowson"
+  DTS:DTSID="{6DE37107-8E1E-47E7-9D0B-A66818889458}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.845.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="1"
+  DTS:VersionGUID="{DB8CEBB0-9BDC-4146-BFEF-94585838B206}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\TableDatatr"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{714FFF17-F3DF-479A-8B5E-0900CCDB6E02}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="TableDatatr"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\TableDatatr\MovieDestination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="MovieDestination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[MD009022]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\TableDatatr\MovieDestination.Connections[OleDbConnection]"
+                  connectionManagerID="{4BD11CA7-87FD-4AD4-92D8-0CA4E3AED427}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-85ELA62_SDB.Movies]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[PrdAcctId]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="32"
+                      cachedName="PrdAcctId"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[PrdAcctId]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[PrdAcctId]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[NameTitle]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="NameTitle"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[NameTitle]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[NameTitle]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[LongName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="LongName"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[LongName]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[LongName]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[CurCd]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="3"
+                      cachedName="CurCd"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[CurCd]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[CurCd]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[LedgerNo]"
+                      cachedDataType="i4"
+                      cachedName="LedgerNo"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[LedgerNo]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[LedgerNo]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[OpenUser]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="OpenUser"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[OpenUser]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[OpenUser]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[DateOpen]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="DateOpen"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[DateOpen]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DateOpen]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[ClosedUser]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="ClosedUser"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[ClosedUser]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[ClosedUser]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[DateClosed]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="DateClosed"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[DateClosed]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DateClosed]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[AcctType]"
+                      cachedDataType="ui1"
+                      cachedName="AcctType"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[AcctType]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[AcctType]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[AcctStat]"
+                      cachedDataType="ui1"
+                      cachedName="AcctStat"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[AcctStat]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[AcctStat]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[MinorType]"
+                      cachedDataType="ui1"
+                      cachedName="MinorType"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[MinorType]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[MinorType]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[ModeOprn]"
+                      cachedDataType="ui1"
+                      cachedName="ModeOprn"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[ModeOprn]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[ModeOprn]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[IntOffset]"
+                      cachedDataType="r8"
+                      cachedName="IntOffset"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[IntOffset]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[IntOffset]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[IntTaxOffset]"
+                      cachedDataType="r8"
+                      cachedName="IntTaxOffset"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[IntTaxOffset]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[IntTaxOffset]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[PenalOffSet]"
+                      cachedDataType="r8"
+                      cachedName="PenalOffSet"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[PenalOffSet]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[PenalOffSet]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[FreezeType]"
+                      cachedDataType="ui1"
+                      cachedName="FreezeType"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[FreezeType]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[FreezeType]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[FrzReasonCd]"
+                      cachedDataType="ui1"
+                      cachedName="FrzReasonCd"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[FrzReasonCd]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[FrzReasonCd]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[CustNo]"
+                      cachedDataType="i4"
+                      cachedName="CustNo"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[CustNo]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[CustNo]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[SplInstr1]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="60"
+                      cachedName="SplInstr1"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[SplInstr1]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[SplInstr1]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[SplInstr2]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="60"
+                      cachedName="SplInstr2"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[SplInstr2]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[SplInstr2]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[DtOfBirth]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="DtOfBirth"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[DtOfBirth]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DtOfBirth]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[FcyScheme]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="FcyScheme"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[FcyScheme]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[FcyScheme]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[InClrgBalFcy]"
+                      cachedDataType="r8"
+                      cachedName="InClrgBalFcy"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[InClrgBalFcy]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[InClrgBalFcy]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[UnClrEffFcy]"
+                      cachedDataType="r8"
+                      cachedName="UnClrEffFcy"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[UnClrEffFcy]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[UnClrEffFcy]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[ShdClrBalFcy]"
+                      cachedDataType="r8"
+                      cachedName="ShdClrBalFcy"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[ShdClrBalFcy]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[ShdClrBalFcy]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[ShdTotBalFcy]"
+                      cachedDataType="r8"
+                      cachedName="ShdTotBalFcy"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[ShdTotBalFcy]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[ShdTotBalFcy]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[ActClrBalFcy]"
+                      cachedDataType="r8"
+                      cachedName="ActClrBalFcy"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[ActClrBalFcy]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[ActClrBalFcy]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[ActTotBalFcy]"
+                      cachedDataType="r8"
+                      cachedName="ActTotBalFcy"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[ActTotBalFcy]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[ActTotBalFcy]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[ActTotBalLcy]"
+                      cachedDataType="r8"
+                      cachedName="ActTotBalLcy"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[ActTotBalLcy]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[ActTotBalLcy]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[TotalLienFcy]"
+                      cachedDataType="r8"
+                      cachedName="TotalLienFcy"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[TotalLienFcy]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[TotalLienFcy]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[ChgHoldAmtFcy]"
+                      cachedDataType="r8"
+                      cachedName="ChgHoldAmtFcy"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[ChgHoldAmtFcy]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[ChgHoldAmtFcy]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[LastDrDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="LastDrDate"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[LastDrDate]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[LastDrDate]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[LastCrDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="LastCrDate"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[LastCrDate]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[LastCrDate]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[LastCustDrDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="LastCustDrDate"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[LastCustDrDate]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[LastCustDrDate]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[LastCustCrDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="LastCustCrDate"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[LastCustCrDate]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[LastCustCrDate]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[ChqBookYN]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="ChqBookYN"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[ChqBookYN]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[ChqBookYN]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[DpYN]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="DpYN"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[DpYN]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DpYN]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[LastIntAppDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="LastIntAppDate"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[LastIntAppDate]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[LastIntAppDate]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[PlrLinkYN]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="PlrLinkYN"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[PlrLinkYN]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[PlrLinkYN]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[DbtrAddMk]"
+                      cachedDataType="i4"
+                      cachedName="DbtrAddMk"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[DbtrAddMk]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrAddMk]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[DbtrAddMb]"
+                      cachedDataType="i4"
+                      cachedName="DbtrAddMb"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[DbtrAddMb]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrAddMb]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[DbtrAddMs]"
+                      cachedDataType="i2"
+                      cachedName="DbtrAddMs"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[DbtrAddMs]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrAddMs]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[DbtrAddMd]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="DbtrAddMd"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[DbtrAddMd]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrAddMd]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[DbtrAddMt]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="DbtrAddMt"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[DbtrAddMt]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrAddMt]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[DbtrAddCk]"
+                      cachedDataType="i4"
+                      cachedName="DbtrAddCk"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[DbtrAddCk]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrAddCk]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[DbtrAddCb]"
+                      cachedDataType="i4"
+                      cachedName="DbtrAddCb"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[DbtrAddCb]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrAddCb]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[DbtrAddCs]"
+                      cachedDataType="i2"
+                      cachedName="DbtrAddCs"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[DbtrAddCs]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrAddCs]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[DbtrAddCd]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="DbtrAddCd"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[DbtrAddCd]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrAddCd]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[DbtrAddCt]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="DbtrAddCt"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[DbtrAddCt]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrAddCt]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[DbtrLupdMk]"
+                      cachedDataType="i4"
+                      cachedName="DbtrLupdMk"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[DbtrLupdMk]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrLupdMk]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[DbtrLupdMb]"
+                      cachedDataType="i4"
+                      cachedName="DbtrLupdMb"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[DbtrLupdMb]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrLupdMb]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[DbtrLupdMs]"
+                      cachedDataType="i2"
+                      cachedName="DbtrLupdMs"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[DbtrLupdMs]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrLupdMs]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[DbtrLupdMd]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="DbtrLupdMd"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[DbtrLupdMd]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrLupdMd]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[DbtrLupdMt]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="DbtrLupdMt"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[DbtrLupdMt]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrLupdMt]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[DbtrLupdCk]"
+                      cachedDataType="i4"
+                      cachedName="DbtrLupdCk"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[DbtrLupdCk]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrLupdCk]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[DbtrLupdCb]"
+                      cachedDataType="i4"
+                      cachedName="DbtrLupdCb"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[DbtrLupdCb]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrLupdCb]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[DbtrLupdCs]"
+                      cachedDataType="i2"
+                      cachedName="DbtrLupdCs"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[DbtrLupdCs]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrLupdCs]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[DbtrLupdCd]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="DbtrLupdCd"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[DbtrLupdCd]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrLupdCd]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[DbtrLupdCt]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="DbtrLupdCt"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[DbtrLupdCt]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrLupdCt]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[DbtrTAuthDone]"
+                      cachedDataType="i2"
+                      cachedName="DbtrTAuthDone"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[DbtrTAuthDone]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrTAuthDone]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[DbtrRecStat]"
+                      cachedDataType="ui1"
+                      cachedName="DbtrRecStat"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[DbtrRecStat]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrRecStat]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[DbtrAuthDone]"
+                      cachedDataType="ui1"
+                      cachedName="DbtrAuthDone"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[DbtrAuthDone]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrAuthDone]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[DbtrAuthNeeded]"
+                      cachedDataType="ui1"
+                      cachedName="DbtrAuthNeeded"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[DbtrAuthNeeded]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrAuthNeeded]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[DbtrUpdtChkId]"
+                      cachedDataType="i2"
+                      cachedName="DbtrUpdtChkId"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[DbtrUpdtChkId]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrUpdtChkId]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[DbtrLHisTrnNo]"
+                      cachedDataType="i4"
+                      cachedName="DbtrLHisTrnNo"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[DbtrLHisTrnNo]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrLHisTrnNo]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[MstrAuthMask]"
+                      cachedDataType="i4"
+                      cachedName="MstrAuthMask"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[MstrAuthMask]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[MstrAuthMask]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[FlexiBalance]"
+                      cachedDataType="r8"
+                      cachedName="FlexiBalance"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[FlexiBalance]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[FlexiBalance]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[FlexiLienBal]"
+                      cachedDataType="r8"
+                      cachedName="FlexiLienBal"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[FlexiLienBal]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[FlexiLienBal]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[DocFileNo]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="DocFileNo"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[DocFileNo]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DocFileNo]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[FxRevalYN]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="FxRevalYN"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[FxRevalYN]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[FxRevalYN]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[Specialcloseoff]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="Specialcloseoff"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[Specialcloseoff]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[Specialcloseoff]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[Notes]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Notes"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[Notes]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[Notes]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[PropcatCd]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="PropcatCd"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[PropcatCd]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[PropcatCd]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[HistcatCd]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4"
+                      cachedName="HistcatCd"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[HistcatCd]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[HistcatCd]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[BnkCode]"
+                      cachedDataType="i2"
+                      cachedName="BnkCode"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[BnkCode]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[BnkCode]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[CustAccessCat]"
+                      cachedDataType="i2"
+                      cachedName="CustAccessCat"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[CustAccessCat]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[CustAccessCat]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[BnkAcTypeDesc]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="BnkAcTypeDesc"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[BnkAcTypeDesc]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[BnkAcTypeDesc]" />
+                    <inputColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].Columns[LBrCode]"
+                      cachedDataType="i4"
+                      cachedName="LBrCode"
+                      externalMetadataColumnId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[LBrCode]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[LBrCode]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[LBrCode]"
+                      dataType="i4"
+                      name="LBrCode" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[PrdAcctId]"
+                      codePage="1252"
+                      dataType="str"
+                      length="32"
+                      name="PrdAcctId" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[NameTitle]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="NameTitle" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[LongName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="LongName" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[CurCd]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="CurCd" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[LedgerNo]"
+                      dataType="i4"
+                      name="LedgerNo" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[OpenUser]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="OpenUser" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[DateOpen]"
+                      dataType="dbTimeStamp"
+                      name="DateOpen" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[ClosedUser]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="ClosedUser" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[DateClosed]"
+                      dataType="dbTimeStamp"
+                      name="DateClosed" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[AcctType]"
+                      dataType="ui1"
+                      name="AcctType" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[AcctStat]"
+                      dataType="ui1"
+                      name="AcctStat" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[MinorType]"
+                      dataType="ui1"
+                      name="MinorType" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[ModeOprn]"
+                      dataType="ui1"
+                      name="ModeOprn" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[IntOffset]"
+                      dataType="r8"
+                      name="IntOffset" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[IntTaxOffset]"
+                      dataType="r8"
+                      name="IntTaxOffset" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[PenalOffSet]"
+                      dataType="r8"
+                      name="PenalOffSet" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[FreezeType]"
+                      dataType="ui1"
+                      name="FreezeType" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[FrzReasonCd]"
+                      dataType="ui1"
+                      name="FrzReasonCd" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[CustNo]"
+                      dataType="i4"
+                      name="CustNo" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[SplInstr1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="60"
+                      name="SplInstr1" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[SplInstr2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="60"
+                      name="SplInstr2" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[DtOfBirth]"
+                      dataType="dbTimeStamp"
+                      name="DtOfBirth" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[FcyScheme]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="FcyScheme" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[InClrgBalFcy]"
+                      dataType="r8"
+                      name="InClrgBalFcy" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[UnClrEffFcy]"
+                      dataType="r8"
+                      name="UnClrEffFcy" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[ShdClrBalFcy]"
+                      dataType="r8"
+                      name="ShdClrBalFcy" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[ShdTotBalFcy]"
+                      dataType="r8"
+                      name="ShdTotBalFcy" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[ActClrBalFcy]"
+                      dataType="r8"
+                      name="ActClrBalFcy" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[ActTotBalFcy]"
+                      dataType="r8"
+                      name="ActTotBalFcy" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[ActTotBalLcy]"
+                      dataType="r8"
+                      name="ActTotBalLcy" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[TotalLienFcy]"
+                      dataType="r8"
+                      name="TotalLienFcy" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[ChgHoldAmtFcy]"
+                      dataType="r8"
+                      name="ChgHoldAmtFcy" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[LastDrDate]"
+                      dataType="dbTimeStamp"
+                      name="LastDrDate" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[LastCrDate]"
+                      dataType="dbTimeStamp"
+                      name="LastCrDate" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[LastCustDrDate]"
+                      dataType="dbTimeStamp"
+                      name="LastCustDrDate" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[LastCustCrDate]"
+                      dataType="dbTimeStamp"
+                      name="LastCustCrDate" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[ChqBookYN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="ChqBookYN" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[DpYN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="DpYN" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[LastIntAppDate]"
+                      dataType="dbTimeStamp"
+                      name="LastIntAppDate" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[PlrLinkYN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="PlrLinkYN" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[DbtrAddMk]"
+                      dataType="i4"
+                      name="DbtrAddMk" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[DbtrAddMb]"
+                      dataType="i4"
+                      name="DbtrAddMb" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[DbtrAddMs]"
+                      dataType="i2"
+                      name="DbtrAddMs" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[DbtrAddMd]"
+                      dataType="dbTimeStamp"
+                      name="DbtrAddMd" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[DbtrAddMt]"
+                      dataType="dbTimeStamp"
+                      name="DbtrAddMt" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[DbtrAddCk]"
+                      dataType="i4"
+                      name="DbtrAddCk" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[DbtrAddCb]"
+                      dataType="i4"
+                      name="DbtrAddCb" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[DbtrAddCs]"
+                      dataType="i2"
+                      name="DbtrAddCs" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[DbtrAddCd]"
+                      dataType="dbTimeStamp"
+                      name="DbtrAddCd" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[DbtrAddCt]"
+                      dataType="dbTimeStamp"
+                      name="DbtrAddCt" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[DbtrLupdMk]"
+                      dataType="i4"
+                      name="DbtrLupdMk" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[DbtrLupdMb]"
+                      dataType="i4"
+                      name="DbtrLupdMb" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[DbtrLupdMs]"
+                      dataType="i2"
+                      name="DbtrLupdMs" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[DbtrLupdMd]"
+                      dataType="dbTimeStamp"
+                      name="DbtrLupdMd" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[DbtrLupdMt]"
+                      dataType="dbTimeStamp"
+                      name="DbtrLupdMt" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[DbtrLupdCk]"
+                      dataType="i4"
+                      name="DbtrLupdCk" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[DbtrLupdCb]"
+                      dataType="i4"
+                      name="DbtrLupdCb" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[DbtrLupdCs]"
+                      dataType="i2"
+                      name="DbtrLupdCs" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[DbtrLupdCd]"
+                      dataType="dbTimeStamp"
+                      name="DbtrLupdCd" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[DbtrLupdCt]"
+                      dataType="dbTimeStamp"
+                      name="DbtrLupdCt" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[DbtrTAuthDone]"
+                      dataType="i2"
+                      name="DbtrTAuthDone" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[DbtrRecStat]"
+                      dataType="ui1"
+                      name="DbtrRecStat" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[DbtrAuthDone]"
+                      dataType="ui1"
+                      name="DbtrAuthDone" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[DbtrAuthNeeded]"
+                      dataType="ui1"
+                      name="DbtrAuthNeeded" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[DbtrUpdtChkId]"
+                      dataType="i2"
+                      name="DbtrUpdtChkId" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[DbtrLHisTrnNo]"
+                      dataType="i4"
+                      name="DbtrLHisTrnNo" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[MstrAuthMask]"
+                      dataType="i4"
+                      name="MstrAuthMask" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[FlexiBalance]"
+                      dataType="r8"
+                      name="FlexiBalance" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[FlexiLienBal]"
+                      dataType="r8"
+                      name="FlexiLienBal" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[DocFileNo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="DocFileNo" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[FxRevalYN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="FxRevalYN" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[Specialcloseoff]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="Specialcloseoff" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[Notes]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Notes" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[PropcatCd]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="PropcatCd" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[HistcatCd]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="HistcatCd" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[BnkCode]"
+                      dataType="i2"
+                      name="BnkCode" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[CustAccessCat]"
+                      dataType="i2"
+                      name="CustAccessCat" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input].ExternalColumns[BnkAcTypeDesc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="BnkAcTypeDesc" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\TableDatatr\MovieDestination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\TableDatatr\MovieDestination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\TableDatatr\MovieDestination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\TableDatatr\MovieDestination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\TableDatatr\MovieDestination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\TableDatatr\SourceTabledata"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="SourceTabledata"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[D009022]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\TableDatatr\SourceTabledata.Connections[OleDbConnection]"
+                  connectionManagerID="{51F3E479-D5D6-4AAC-990C-78DB8E1DA35B}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-85ELA62.125007]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[LBrCode]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[LBrCode]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[LBrCode]"
+                      name="LBrCode"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[PrdAcctId]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[PrdAcctId]"
+                      length="32"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[PrdAcctId]"
+                      name="PrdAcctId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[NameTitle]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[NameTitle]"
+                      length="4"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[NameTitle]"
+                      name="NameTitle"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[LongName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[LongName]"
+                      length="200"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[LongName]"
+                      name="LongName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[CurCd]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[CurCd]"
+                      length="3"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[CurCd]"
+                      name="CurCd"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[LedgerNo]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[LedgerNo]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[LedgerNo]"
+                      name="LedgerNo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[OpenUser]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[OpenUser]"
+                      length="8"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[OpenUser]"
+                      name="OpenUser"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DateOpen]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[DateOpen]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DateOpen]"
+                      name="DateOpen"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[ClosedUser]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[ClosedUser]"
+                      length="8"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[ClosedUser]"
+                      name="ClosedUser"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DateClosed]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[DateClosed]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DateClosed]"
+                      name="DateClosed"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[AcctType]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[AcctType]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[AcctType]"
+                      name="AcctType"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[AcctStat]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[AcctStat]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[AcctStat]"
+                      name="AcctStat"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[MinorType]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[MinorType]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[MinorType]"
+                      name="MinorType"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[ModeOprn]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[ModeOprn]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[ModeOprn]"
+                      name="ModeOprn"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[IntOffset]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[IntOffset]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[IntOffset]"
+                      name="IntOffset"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[IntTaxOffset]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[IntTaxOffset]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[IntTaxOffset]"
+                      name="IntTaxOffset"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[PenalOffSet]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[PenalOffSet]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[PenalOffSet]"
+                      name="PenalOffSet"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[FreezeType]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[FreezeType]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[FreezeType]"
+                      name="FreezeType"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[FrzReasonCd]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[FrzReasonCd]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[FrzReasonCd]"
+                      name="FrzReasonCd"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[CustNo]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[CustNo]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[CustNo]"
+                      name="CustNo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[SplInstr1]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[SplInstr1]"
+                      length="60"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[SplInstr1]"
+                      name="SplInstr1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[SplInstr2]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[SplInstr2]"
+                      length="60"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[SplInstr2]"
+                      name="SplInstr2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DtOfBirth]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[DtOfBirth]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DtOfBirth]"
+                      name="DtOfBirth"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[FcyScheme]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[FcyScheme]"
+                      length="4"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[FcyScheme]"
+                      name="FcyScheme"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[InClrgBalFcy]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[InClrgBalFcy]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[InClrgBalFcy]"
+                      name="InClrgBalFcy"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[UnClrEffFcy]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[UnClrEffFcy]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[UnClrEffFcy]"
+                      name="UnClrEffFcy"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[ShdClrBalFcy]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[ShdClrBalFcy]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[ShdClrBalFcy]"
+                      name="ShdClrBalFcy"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[ShdTotBalFcy]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[ShdTotBalFcy]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[ShdTotBalFcy]"
+                      name="ShdTotBalFcy"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[ActClrBalFcy]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[ActClrBalFcy]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[ActClrBalFcy]"
+                      name="ActClrBalFcy"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[ActTotBalFcy]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[ActTotBalFcy]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[ActTotBalFcy]"
+                      name="ActTotBalFcy"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[ActTotBalLcy]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[ActTotBalLcy]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[ActTotBalLcy]"
+                      name="ActTotBalLcy"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[TotalLienFcy]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[TotalLienFcy]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[TotalLienFcy]"
+                      name="TotalLienFcy"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[ChgHoldAmtFcy]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[ChgHoldAmtFcy]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[ChgHoldAmtFcy]"
+                      name="ChgHoldAmtFcy"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[LastDrDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[LastDrDate]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[LastDrDate]"
+                      name="LastDrDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[LastCrDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[LastCrDate]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[LastCrDate]"
+                      name="LastCrDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[LastCustDrDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[LastCustDrDate]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[LastCustDrDate]"
+                      name="LastCustDrDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[LastCustCrDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[LastCustCrDate]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[LastCustCrDate]"
+                      name="LastCustCrDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[ChqBookYN]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[ChqBookYN]"
+                      length="1"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[ChqBookYN]"
+                      name="ChqBookYN"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DpYN]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[DpYN]"
+                      length="1"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DpYN]"
+                      name="DpYN"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[LastIntAppDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[LastIntAppDate]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[LastIntAppDate]"
+                      name="LastIntAppDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[PlrLinkYN]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[PlrLinkYN]"
+                      length="1"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[PlrLinkYN]"
+                      name="PlrLinkYN"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrAddMk]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[DbtrAddMk]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrAddMk]"
+                      name="DbtrAddMk"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrAddMb]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[DbtrAddMb]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrAddMb]"
+                      name="DbtrAddMb"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrAddMs]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[DbtrAddMs]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrAddMs]"
+                      name="DbtrAddMs"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrAddMd]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[DbtrAddMd]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrAddMd]"
+                      name="DbtrAddMd"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrAddMt]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[DbtrAddMt]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrAddMt]"
+                      name="DbtrAddMt"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrAddCk]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[DbtrAddCk]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrAddCk]"
+                      name="DbtrAddCk"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrAddCb]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[DbtrAddCb]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrAddCb]"
+                      name="DbtrAddCb"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrAddCs]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[DbtrAddCs]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrAddCs]"
+                      name="DbtrAddCs"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrAddCd]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[DbtrAddCd]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrAddCd]"
+                      name="DbtrAddCd"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrAddCt]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[DbtrAddCt]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrAddCt]"
+                      name="DbtrAddCt"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrLupdMk]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[DbtrLupdMk]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrLupdMk]"
+                      name="DbtrLupdMk"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrLupdMb]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[DbtrLupdMb]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrLupdMb]"
+                      name="DbtrLupdMb"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrLupdMs]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[DbtrLupdMs]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrLupdMs]"
+                      name="DbtrLupdMs"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrLupdMd]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[DbtrLupdMd]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrLupdMd]"
+                      name="DbtrLupdMd"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrLupdMt]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[DbtrLupdMt]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrLupdMt]"
+                      name="DbtrLupdMt"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrLupdCk]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[DbtrLupdCk]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrLupdCk]"
+                      name="DbtrLupdCk"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrLupdCb]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[DbtrLupdCb]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrLupdCb]"
+                      name="DbtrLupdCb"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrLupdCs]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[DbtrLupdCs]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrLupdCs]"
+                      name="DbtrLupdCs"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrLupdCd]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[DbtrLupdCd]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrLupdCd]"
+                      name="DbtrLupdCd"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrLupdCt]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[DbtrLupdCt]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrLupdCt]"
+                      name="DbtrLupdCt"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrTAuthDone]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[DbtrTAuthDone]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrTAuthDone]"
+                      name="DbtrTAuthDone"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrRecStat]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[DbtrRecStat]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrRecStat]"
+                      name="DbtrRecStat"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrAuthDone]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[DbtrAuthDone]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrAuthDone]"
+                      name="DbtrAuthDone"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrAuthNeeded]"
+                      dataType="ui1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[DbtrAuthNeeded]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrAuthNeeded]"
+                      name="DbtrAuthNeeded"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrUpdtChkId]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[DbtrUpdtChkId]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrUpdtChkId]"
+                      name="DbtrUpdtChkId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrLHisTrnNo]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[DbtrLHisTrnNo]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DbtrLHisTrnNo]"
+                      name="DbtrLHisTrnNo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[MstrAuthMask]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[MstrAuthMask]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[MstrAuthMask]"
+                      name="MstrAuthMask"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[FlexiBalance]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[FlexiBalance]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[FlexiBalance]"
+                      name="FlexiBalance"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[FlexiLienBal]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[FlexiLienBal]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[FlexiLienBal]"
+                      name="FlexiLienBal"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DocFileNo]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[DocFileNo]"
+                      length="15"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[DocFileNo]"
+                      name="DocFileNo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[FxRevalYN]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[FxRevalYN]"
+                      length="1"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[FxRevalYN]"
+                      name="FxRevalYN"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[Specialcloseoff]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[Specialcloseoff]"
+                      length="1"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[Specialcloseoff]"
+                      name="Specialcloseoff"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[Notes]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[Notes]"
+                      length="50"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[Notes]"
+                      name="Notes"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[PropcatCd]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[PropcatCd]"
+                      length="4"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[PropcatCd]"
+                      name="PropcatCd"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[HistcatCd]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[HistcatCd]"
+                      length="4"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[HistcatCd]"
+                      name="HistcatCd"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[BnkCode]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[BnkCode]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[BnkCode]"
+                      name="BnkCode"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[CustAccessCat]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[CustAccessCat]"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[CustAccessCat]"
+                      name="CustAccessCat"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[BnkAcTypeDesc]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[BnkAcTypeDesc]"
+                      length="50"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].Columns[BnkAcTypeDesc]"
+                      name="BnkAcTypeDesc"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[LBrCode]"
+                      dataType="i4"
+                      name="LBrCode" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[PrdAcctId]"
+                      codePage="1252"
+                      dataType="str"
+                      length="32"
+                      name="PrdAcctId" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[NameTitle]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="NameTitle" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[LongName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="LongName" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[CurCd]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      name="CurCd" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[LedgerNo]"
+                      dataType="i4"
+                      name="LedgerNo" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[OpenUser]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="OpenUser" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[DateOpen]"
+                      dataType="dbTimeStamp"
+                      name="DateOpen" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[ClosedUser]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="ClosedUser" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[DateClosed]"
+                      dataType="dbTimeStamp"
+                      name="DateClosed" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[AcctType]"
+                      dataType="ui1"
+                      name="AcctType" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[AcctStat]"
+                      dataType="ui1"
+                      name="AcctStat" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[MinorType]"
+                      dataType="ui1"
+                      name="MinorType" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[ModeOprn]"
+                      dataType="ui1"
+                      name="ModeOprn" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[IntOffset]"
+                      dataType="r8"
+                      name="IntOffset" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[IntTaxOffset]"
+                      dataType="r8"
+                      name="IntTaxOffset" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[PenalOffSet]"
+                      dataType="r8"
+                      name="PenalOffSet" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[FreezeType]"
+                      dataType="ui1"
+                      name="FreezeType" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[FrzReasonCd]"
+                      dataType="ui1"
+                      name="FrzReasonCd" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[CustNo]"
+                      dataType="i4"
+                      name="CustNo" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[SplInstr1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="60"
+                      name="SplInstr1" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[SplInstr2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="60"
+                      name="SplInstr2" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[DtOfBirth]"
+                      dataType="dbTimeStamp"
+                      name="DtOfBirth" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[FcyScheme]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="FcyScheme" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[InClrgBalFcy]"
+                      dataType="r8"
+                      name="InClrgBalFcy" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[UnClrEffFcy]"
+                      dataType="r8"
+                      name="UnClrEffFcy" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[ShdClrBalFcy]"
+                      dataType="r8"
+                      name="ShdClrBalFcy" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[ShdTotBalFcy]"
+                      dataType="r8"
+                      name="ShdTotBalFcy" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[ActClrBalFcy]"
+                      dataType="r8"
+                      name="ActClrBalFcy" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[ActTotBalFcy]"
+                      dataType="r8"
+                      name="ActTotBalFcy" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[ActTotBalLcy]"
+                      dataType="r8"
+                      name="ActTotBalLcy" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[TotalLienFcy]"
+                      dataType="r8"
+                      name="TotalLienFcy" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[ChgHoldAmtFcy]"
+                      dataType="r8"
+                      name="ChgHoldAmtFcy" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[LastDrDate]"
+                      dataType="dbTimeStamp"
+                      name="LastDrDate" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[LastCrDate]"
+                      dataType="dbTimeStamp"
+                      name="LastCrDate" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[LastCustDrDate]"
+                      dataType="dbTimeStamp"
+                      name="LastCustDrDate" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[LastCustCrDate]"
+                      dataType="dbTimeStamp"
+                      name="LastCustCrDate" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[ChqBookYN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="ChqBookYN" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[DpYN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="DpYN" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[LastIntAppDate]"
+                      dataType="dbTimeStamp"
+                      name="LastIntAppDate" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[PlrLinkYN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="PlrLinkYN" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[DbtrAddMk]"
+                      dataType="i4"
+                      name="DbtrAddMk" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[DbtrAddMb]"
+                      dataType="i4"
+                      name="DbtrAddMb" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[DbtrAddMs]"
+                      dataType="i2"
+                      name="DbtrAddMs" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[DbtrAddMd]"
+                      dataType="dbTimeStamp"
+                      name="DbtrAddMd" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[DbtrAddMt]"
+                      dataType="dbTimeStamp"
+                      name="DbtrAddMt" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[DbtrAddCk]"
+                      dataType="i4"
+                      name="DbtrAddCk" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[DbtrAddCb]"
+                      dataType="i4"
+                      name="DbtrAddCb" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[DbtrAddCs]"
+                      dataType="i2"
+                      name="DbtrAddCs" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[DbtrAddCd]"
+                      dataType="dbTimeStamp"
+                      name="DbtrAddCd" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[DbtrAddCt]"
+                      dataType="dbTimeStamp"
+                      name="DbtrAddCt" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[DbtrLupdMk]"
+                      dataType="i4"
+                      name="DbtrLupdMk" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[DbtrLupdMb]"
+                      dataType="i4"
+                      name="DbtrLupdMb" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[DbtrLupdMs]"
+                      dataType="i2"
+                      name="DbtrLupdMs" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[DbtrLupdMd]"
+                      dataType="dbTimeStamp"
+                      name="DbtrLupdMd" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[DbtrLupdMt]"
+                      dataType="dbTimeStamp"
+                      name="DbtrLupdMt" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[DbtrLupdCk]"
+                      dataType="i4"
+                      name="DbtrLupdCk" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[DbtrLupdCb]"
+                      dataType="i4"
+                      name="DbtrLupdCb" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[DbtrLupdCs]"
+                      dataType="i2"
+                      name="DbtrLupdCs" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[DbtrLupdCd]"
+                      dataType="dbTimeStamp"
+                      name="DbtrLupdCd" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[DbtrLupdCt]"
+                      dataType="dbTimeStamp"
+                      name="DbtrLupdCt" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[DbtrTAuthDone]"
+                      dataType="i2"
+                      name="DbtrTAuthDone" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[DbtrRecStat]"
+                      dataType="ui1"
+                      name="DbtrRecStat" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[DbtrAuthDone]"
+                      dataType="ui1"
+                      name="DbtrAuthDone" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[DbtrAuthNeeded]"
+                      dataType="ui1"
+                      name="DbtrAuthNeeded" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[DbtrUpdtChkId]"
+                      dataType="i2"
+                      name="DbtrUpdtChkId" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[DbtrLHisTrnNo]"
+                      dataType="i4"
+                      name="DbtrLHisTrnNo" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[MstrAuthMask]"
+                      dataType="i4"
+                      name="MstrAuthMask" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[FlexiBalance]"
+                      dataType="r8"
+                      name="FlexiBalance" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[FlexiLienBal]"
+                      dataType="r8"
+                      name="FlexiLienBal" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[DocFileNo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="DocFileNo" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[FxRevalYN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="FxRevalYN" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[Specialcloseoff]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="Specialcloseoff" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[Notes]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Notes" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[PropcatCd]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="PropcatCd" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[HistcatCd]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      name="HistcatCd" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[BnkCode]"
+                      dataType="i2"
+                      name="BnkCode" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[BnkAcTypeDesc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="BnkAcTypeDesc" />
+                    <externalMetadataColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output].ExternalColumns[CustAccessCat]"
+                      dataType="i2"
+                      name="CustAccessCat" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[LBrCode]"
+                      dataType="i4"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[LBrCode]"
+                      name="LBrCode" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[PrdAcctId]"
+                      codePage="1252"
+                      dataType="str"
+                      length="32"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[PrdAcctId]"
+                      name="PrdAcctId" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[NameTitle]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[NameTitle]"
+                      name="NameTitle" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[LongName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[LongName]"
+                      name="LongName" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[CurCd]"
+                      codePage="1252"
+                      dataType="str"
+                      length="3"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[CurCd]"
+                      name="CurCd" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[LedgerNo]"
+                      dataType="i4"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[LedgerNo]"
+                      name="LedgerNo" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[OpenUser]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[OpenUser]"
+                      name="OpenUser" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[DateOpen]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[DateOpen]"
+                      name="DateOpen" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[ClosedUser]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[ClosedUser]"
+                      name="ClosedUser" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[DateClosed]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[DateClosed]"
+                      name="DateClosed" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[AcctType]"
+                      dataType="ui1"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[AcctType]"
+                      name="AcctType" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[AcctStat]"
+                      dataType="ui1"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[AcctStat]"
+                      name="AcctStat" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[MinorType]"
+                      dataType="ui1"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[MinorType]"
+                      name="MinorType" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[ModeOprn]"
+                      dataType="ui1"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[ModeOprn]"
+                      name="ModeOprn" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[IntOffset]"
+                      dataType="r8"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[IntOffset]"
+                      name="IntOffset" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[IntTaxOffset]"
+                      dataType="r8"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[IntTaxOffset]"
+                      name="IntTaxOffset" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[PenalOffSet]"
+                      dataType="r8"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[PenalOffSet]"
+                      name="PenalOffSet" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[FreezeType]"
+                      dataType="ui1"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[FreezeType]"
+                      name="FreezeType" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[FrzReasonCd]"
+                      dataType="ui1"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[FrzReasonCd]"
+                      name="FrzReasonCd" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[CustNo]"
+                      dataType="i4"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[CustNo]"
+                      name="CustNo" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[SplInstr1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="60"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[SplInstr1]"
+                      name="SplInstr1" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[SplInstr2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="60"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[SplInstr2]"
+                      name="SplInstr2" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[DtOfBirth]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[DtOfBirth]"
+                      name="DtOfBirth" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[FcyScheme]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[FcyScheme]"
+                      name="FcyScheme" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[InClrgBalFcy]"
+                      dataType="r8"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[InClrgBalFcy]"
+                      name="InClrgBalFcy" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[UnClrEffFcy]"
+                      dataType="r8"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[UnClrEffFcy]"
+                      name="UnClrEffFcy" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[ShdClrBalFcy]"
+                      dataType="r8"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[ShdClrBalFcy]"
+                      name="ShdClrBalFcy" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[ShdTotBalFcy]"
+                      dataType="r8"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[ShdTotBalFcy]"
+                      name="ShdTotBalFcy" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[ActClrBalFcy]"
+                      dataType="r8"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[ActClrBalFcy]"
+                      name="ActClrBalFcy" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[ActTotBalFcy]"
+                      dataType="r8"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[ActTotBalFcy]"
+                      name="ActTotBalFcy" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[ActTotBalLcy]"
+                      dataType="r8"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[ActTotBalLcy]"
+                      name="ActTotBalLcy" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[TotalLienFcy]"
+                      dataType="r8"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[TotalLienFcy]"
+                      name="TotalLienFcy" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[ChgHoldAmtFcy]"
+                      dataType="r8"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[ChgHoldAmtFcy]"
+                      name="ChgHoldAmtFcy" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[LastDrDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[LastDrDate]"
+                      name="LastDrDate" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[LastCrDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[LastCrDate]"
+                      name="LastCrDate" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[LastCustDrDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[LastCustDrDate]"
+                      name="LastCustDrDate" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[LastCustCrDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[LastCustCrDate]"
+                      name="LastCustCrDate" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[ChqBookYN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[ChqBookYN]"
+                      name="ChqBookYN" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[DpYN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[DpYN]"
+                      name="DpYN" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[LastIntAppDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[LastIntAppDate]"
+                      name="LastIntAppDate" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[PlrLinkYN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[PlrLinkYN]"
+                      name="PlrLinkYN" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[DbtrAddMk]"
+                      dataType="i4"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[DbtrAddMk]"
+                      name="DbtrAddMk" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[DbtrAddMb]"
+                      dataType="i4"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[DbtrAddMb]"
+                      name="DbtrAddMb" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[DbtrAddMs]"
+                      dataType="i2"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[DbtrAddMs]"
+                      name="DbtrAddMs" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[DbtrAddMd]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[DbtrAddMd]"
+                      name="DbtrAddMd" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[DbtrAddMt]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[DbtrAddMt]"
+                      name="DbtrAddMt" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[DbtrAddCk]"
+                      dataType="i4"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[DbtrAddCk]"
+                      name="DbtrAddCk" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[DbtrAddCb]"
+                      dataType="i4"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[DbtrAddCb]"
+                      name="DbtrAddCb" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[DbtrAddCs]"
+                      dataType="i2"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[DbtrAddCs]"
+                      name="DbtrAddCs" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[DbtrAddCd]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[DbtrAddCd]"
+                      name="DbtrAddCd" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[DbtrAddCt]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[DbtrAddCt]"
+                      name="DbtrAddCt" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[DbtrLupdMk]"
+                      dataType="i4"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[DbtrLupdMk]"
+                      name="DbtrLupdMk" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[DbtrLupdMb]"
+                      dataType="i4"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[DbtrLupdMb]"
+                      name="DbtrLupdMb" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[DbtrLupdMs]"
+                      dataType="i2"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[DbtrLupdMs]"
+                      name="DbtrLupdMs" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[DbtrLupdMd]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[DbtrLupdMd]"
+                      name="DbtrLupdMd" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[DbtrLupdMt]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[DbtrLupdMt]"
+                      name="DbtrLupdMt" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[DbtrLupdCk]"
+                      dataType="i4"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[DbtrLupdCk]"
+                      name="DbtrLupdCk" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[DbtrLupdCb]"
+                      dataType="i4"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[DbtrLupdCb]"
+                      name="DbtrLupdCb" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[DbtrLupdCs]"
+                      dataType="i2"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[DbtrLupdCs]"
+                      name="DbtrLupdCs" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[DbtrLupdCd]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[DbtrLupdCd]"
+                      name="DbtrLupdCd" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[DbtrLupdCt]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[DbtrLupdCt]"
+                      name="DbtrLupdCt" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[DbtrTAuthDone]"
+                      dataType="i2"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[DbtrTAuthDone]"
+                      name="DbtrTAuthDone" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[DbtrRecStat]"
+                      dataType="ui1"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[DbtrRecStat]"
+                      name="DbtrRecStat" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[DbtrAuthDone]"
+                      dataType="ui1"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[DbtrAuthDone]"
+                      name="DbtrAuthDone" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[DbtrAuthNeeded]"
+                      dataType="ui1"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[DbtrAuthNeeded]"
+                      name="DbtrAuthNeeded" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[DbtrUpdtChkId]"
+                      dataType="i2"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[DbtrUpdtChkId]"
+                      name="DbtrUpdtChkId" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[DbtrLHisTrnNo]"
+                      dataType="i4"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[DbtrLHisTrnNo]"
+                      name="DbtrLHisTrnNo" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[MstrAuthMask]"
+                      dataType="i4"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[MstrAuthMask]"
+                      name="MstrAuthMask" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[FlexiBalance]"
+                      dataType="r8"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[FlexiBalance]"
+                      name="FlexiBalance" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[FlexiLienBal]"
+                      dataType="r8"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[FlexiLienBal]"
+                      name="FlexiLienBal" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[DocFileNo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[DocFileNo]"
+                      name="DocFileNo" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[FxRevalYN]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[FxRevalYN]"
+                      name="FxRevalYN" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[Specialcloseoff]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[Specialcloseoff]"
+                      name="Specialcloseoff" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[Notes]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[Notes]"
+                      name="Notes" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[PropcatCd]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[PropcatCd]"
+                      name="PropcatCd" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[HistcatCd]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[HistcatCd]"
+                      name="HistcatCd" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[BnkCode]"
+                      dataType="i2"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[BnkCode]"
+                      name="BnkCode" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[CustAccessCat]"
+                      dataType="i2"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[CustAccessCat]"
+                      name="CustAccessCat" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
+                      refId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[BnkAcTypeDesc]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Error Output].Columns[BnkAcTypeDesc]"
+                      name="BnkAcTypeDesc" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\TableDatatr.Paths[OLE DB Source Output]"
+              endId="Package\TableDatatr\MovieDestination.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\TableDatatr\SourceTabledata.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="137,42"
+          Id="Package\TableDatatr"
+          TopLeft="5.5,5.5" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\TableDatatr">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="163,42"
+          Id="Package\TableDatatr\SourceTabledata"
+          TopLeft="5.5,5.5" />
+        <NodeLayout
+          Size="164,42"
+          Id="Package\TableDatatr\MovieDestination"
+          TopLeft="228.5,66.5" />
+        <EdgeLayout
+          Id="Package\TableDatatr.Paths[OLE DB Source Output]"
+          TopLeft="168.5,26.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="60,61"
+              Start="0,0"
+              End="52.5,61">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="26,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="26,0"
+                    Point2="30,0"
+                    Point3="30,4" />
+                  <mssgle:LineSegment
+                    End="30,57" />
+                  <mssgle:CubicBezierSegment
+                    Point1="30,57"
+                    Point2="30,61"
+                    Point3="34,61" />
+                  <mssgle:LineSegment
+                    End="52.5,61" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\TableDatatr\SourceTabledata">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\TableDatatr\MovieDestination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
