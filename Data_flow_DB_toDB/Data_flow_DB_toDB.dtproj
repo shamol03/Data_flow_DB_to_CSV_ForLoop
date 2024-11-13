@@ -22,8 +22,8 @@
           <SSIS:Property SSIS:Name="VersionComments">
           </SSIS:Property>
           <SSIS:Property SSIS:Name="CreationDate">2024-09-06T21:10:32.3919588+06:00</SSIS:Property>
-          <SSIS:Property SSIS:Name="CreatorName">DESKTOP-85ELA62\Rowson</SSIS:Property>
-          <SSIS:Property SSIS:Name="CreatorComputerName">DESKTOP-85ELA62</SSIS:Property>
+          <SSIS:Property SSIS:Name="CreatorName">############</SSIS:Property>
+          <SSIS:Property SSIS:Name="CreatorComputerName">######</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
           <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAizsQcnCxvEW5LQWW50HNRAAAAAACAAAAAAAQZgAAAAEAACAAAAA9jLWt0jbwpcfpdpsDJ03RrHxSDDV1oJ1AOzFJf1je/QAAAAAOgAAAAAIAACAAAACSCZfNossxShgZWqT0GsrN+WhGc5tOK8XjNOrryJ6U/JAAAADDcygwLp3qPnMuHLllIkP3uqbjdK0F37yY4/n5vzYzyarEV97zpKA+oji80BEzcGn7ueTruZ5OaLkZMAeTnawunrRR3JAyq7pDpIE0MmMNReg4X1GQ+OHpqMJo+ksUQVNmDG99aaKMFTvAGWG0KTKQkEXJ0lvrlPf7F68UmQ2acS8v+9xs8phrCeXuYsYZsb5AAAAA2c3gh1kG1XDfZ/yhmuNKPgdhqsM8lsCWXqw2na345fBu+fHOvX9mPbPEgI0Drw9ea0VGWaEmkMopXC062o4t4g==</SSIS:Property>
@@ -36,12 +36,12 @@
           <SSIS:Package SSIS:Name="Package2.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
-          <SSIS:ConnectionManager SSIS:Name="DESKTOP-85ELA62.125007.conmgr" />
-          <SSIS:ConnectionManager SSIS:Name="DESKTOP-85ELA62_SDB.Movies.conmgr" />
+          <SSIS:ConnectionManager SSIS:Name="#" />
+          <SSIS:ConnectionManager SSIS:Name="#" />
         </SSIS:ConnectionManagers>
         <SSIS:DeploymentInfo>
           <SSIS:ProjectConnectionParameters>
-            <SSIS:Parameter SSIS:Name="CM.DESKTOP-85ELA62.125007.ConnectByProxy">
+            <SSIS:Parameter SSIS:Name="#">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -67,11 +67,11 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">Data Source=DESKTOP-85ELA62;Initial Catalog=125007;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Data_flow_DB_toDB-{51F3E479-D5D6-4AAC-990C-78DB8E1DA35B}DESKTOP-85ELA62.125007;Auto Translate=False;</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">Data Source=#;Initial Catalog=DB;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Data_flow_DB_toDB-{51F3E479-D5D6-4AAC-990C-78DB8E1DA35B}DESKTOP-85ELA62.125007;Auto Translate=False;</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.DESKTOP-85ELA62.125007.ConnectRetryCount">
+            <SSIS:Parameter SSIS:Name="#">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -86,7 +86,7 @@
                 <SSIS:Property SSIS:Name="DataType">9</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.DESKTOP-85ELA62.125007.ConnectRetryInterval">
+            <SSIS:Parameter SSIS:Name="#">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -101,7 +101,7 @@
                 <SSIS:Property SSIS:Name="DataType">9</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.DESKTOP-85ELA62.125007.ConnectUsingManagedIdentity">
+            <SSIS:Parameter SSIS:Name="#">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -116,7 +116,7 @@
                 <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.DESKTOP-85ELA62.125007.InitialCatalog">
+            <SSIS:Parameter SSIS:Name="#">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -131,7 +131,7 @@
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.DESKTOP-85ELA62.125007.Password">
+            <SSIS:Parameter SSIS:Name="#">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -145,7 +145,7 @@
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.DESKTOP-85ELA62.125007.RetainSameConnection">
+            <SSIS:Parameter SSIS:Name="#">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -160,7 +160,7 @@
                 <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.DESKTOP-85ELA62.125007.ServerName">
+            <SSIS:Parameter SSIS:Name="#">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -189,7 +189,7 @@
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.DESKTOP-85ELA62_SDB.Movies.ConnectByProxy">
+            <SSIS:Parameter SSIS:Name="#">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -204,7 +204,7 @@
                 <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.DESKTOP-85ELA62_SDB.Movies.ConnectionString">
+            <SSIS:Parameter SSIS:Name="#">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -219,7 +219,7 @@
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.DESKTOP-85ELA62_SDB.Movies.ConnectRetryCount">
+            <SSIS:Parameter SSIS:Name="#">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -234,7 +234,7 @@
                 <SSIS:Property SSIS:Name="DataType">9</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.DESKTOP-85ELA62_SDB.Movies.ConnectRetryInterval">
+            <SSIS:Parameter SSIS:Name="#l">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -249,7 +249,7 @@
                 <SSIS:Property SSIS:Name="DataType">9</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.DESKTOP-85ELA62_SDB.Movies.ConnectUsingManagedIdentity">
+            <SSIS:Parameter SSIS:Name="#">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -264,7 +264,7 @@
                 <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.DESKTOP-85ELA62_SDB.Movies.InitialCatalog">
+            <SSIS:Parameter SSIS:Name="#">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -293,7 +293,7 @@
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.DESKTOP-85ELA62_SDB.Movies.RetainSameConnection">
+            <SSIS:Parameter SSIS:Name="#">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -308,7 +308,7 @@
                 <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.DESKTOP-85ELA62_SDB.Movies.ServerName">
+            <SSIS:Parameter SSIS:Name="#">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -319,11 +319,11 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">DESKTOP-85ELA62\SDB</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">#</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.DESKTOP-85ELA62_SDB.Movies.UserName">
+            <SSIS:Parameter SSIS:Name="#">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -389,7 +389,7 @@
                 <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
               </SSIS:Properties>
               <SSIS:Parameters>
-                <SSIS:Parameter SSIS:Name="CM.DESKTOP-85ELA62.BankingDB.ConnectByProxy">
+                <SSIS:Parameter SSIS:Name="#">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -404,7 +404,7 @@
                     <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.DESKTOP-85ELA62.BankingDB.ConnectionString">
+                <SSIS:Parameter SSIS:Name="#">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -419,7 +419,7 @@
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.DESKTOP-85ELA62.BankingDB.ConnectRetryCount">
+                <SSIS:Parameter SSIS:Name="#">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -434,7 +434,7 @@
                     <SSIS:Property SSIS:Name="DataType">9</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.DESKTOP-85ELA62.BankingDB.ConnectRetryInterval">
+                <SSIS:Parameter SSIS:Name="#">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -449,7 +449,7 @@
                     <SSIS:Property SSIS:Name="DataType">9</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.DESKTOP-85ELA62.BankingDB.ConnectUsingManagedIdentity">
+                <SSIS:Parameter SSIS:Name="#">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -479,7 +479,7 @@
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.DESKTOP-85ELA62.BankingDB.Password">
+                <SSIS:Parameter SSIS:Name="#">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -493,7 +493,7 @@
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.DESKTOP-85ELA62.BankingDB.RetainSameConnection">
+                <SSIS:Parameter SSIS:Name="#">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -508,7 +508,7 @@
                     <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.DESKTOP-85ELA62.BankingDB.ServerName">
+                <SSIS:Parameter SSIS:Name="#">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -523,7 +523,7 @@
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.DESKTOP-85ELA62.BankingDB.UserName">
+                <SSIS:Parameter SSIS:Name="#">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
